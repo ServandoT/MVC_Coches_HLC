@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Formulario de Coche</title>
+    </head>
+
+    <body>
+        <h1>Coche</h1>
+
+        <form th:action="@{/coche}" th:object="${coche}" method="post">
+            <!-- Campo oculto para el ID del coche -->
+            <input type="hidden" name="id" th:value="*{id}">
+
+            Marca: <input type="text" th:field="*{marca}">
+            Matrícula: <input type="text" th:field="*{matricula}">
+            Color: <input type="text" th:field="*{color}">
+
+            <input type="submit" >
+        </form>
+    </body>
+</html>
